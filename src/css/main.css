@@ -135,3 +135,6 @@
     }
   }
   
+  .navbar a:hover {
+    color: rgb(144, 67, 251);
+  } 
