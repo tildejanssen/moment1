@@ -1,0 +1,137 @@
+* {
+    /*återställer standardstilar */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .navbar {
+    height:80px;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: rgb(220, 180, 255);
+  }
+  
+  .hamburger {
+    /*hamburger menyn visas inte */
+    display: none;
+  }
+
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 3px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 120px;
+    
+  }
+  
+  .nav-item {
+    margin-left:50px;
+  }
+  
+  .nav-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    line-height: 30px;
+  }
+
+.logo{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    line-height: 30px;
+}
+  
+  @media only screen and (max-width: 1024px) {
+    /*Omvandlas till hamburger meny vid max width 1024px */
+    .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 5rem;
+      z-index: 1000;
+      /* så menyn visas över innehållet*/
+      flex-direction: column;
+      background-color: rgb(220, 180, 255);
+      width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
+    }
+  
+    .nav-menu.active {
+      left: 0;
+      background-color: rgb(220, 180, 255);
+      position: absolute;
+      
+    }
+  
+    .nav-item {
+      margin: 1.5rem 0;
+      /*mellanrum */
+    }
+  
+    .nav-link {
+      color: black;
+      /*färg på menyknapparna */
+      font-weight: bolder;
+    }
+  
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      /*ändrar muspekaren*/
+    }
+  
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .goHome {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      padding: 14px 16px;
+      font-weight: bold;
+      font-size: larger;
+    }
+  
+    .hamburger.active .bar:nth-child(1) {
+     transform: translate(0px,2px) rotate(45deg);
+    
+  
+      /*specifikationer när man trycker på menyn */
+    }
+  
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+  
